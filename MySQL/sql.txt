@@ -1,0 +1,38 @@
+SELECT aluno as Nome_do_aluno FROM emprestimos  (as Trocar nome da coluna)
+SELECT sum(multa_paga) as Total_multa_paga FROM emprestimos (soma os valores)
+SELECT count(*) as Numero_de_Emprestimo FROM emprestimos (conta quatidade de registro)
+SELECT avg(multa_paga) as Media_multa_por_aluno FROM emprestimos (media dos valores registrados)
+SELECT aluno,sum(multa_paga) as Total_multa FROM emprestimos group by aluno ( mostra o valor total de multa_paga de todos os alunos)
+1)
+SELECT sum(produtos.valor)as Valor_vendida,sum(vendas.quantidade)as Quant_produto 
+FROM produtos,vendas,vendedores 
+WHERE produtos.codigo=vendas.cod_produto AND vendedores.codigo=vendas.cod_vendedor AND vendedores.regiao="nordeste"
+
+2)
+SELECT vendedores.regiao, sum(produtos.valor)as Valor_vendida,sum(vendas.quantidade)as Quant_produto 
+FROM produtos,vendas,vendedores 
+WHERE produtos.codigo=vendas.cod_produto AND vendedores.codigo=vendas.cod_vendedor 
+GROUP By vendedores.regiao
+
+3)
+SELECT vendedores.nome, sum(produtos.valor)as Valor_vendida,sum(vendas.quantidade)as Quant_produto 
+FROM produtos,vendas,vendedores 
+WHERE produtos.codigo=vendas.cod_produto AND vendedores.codigo=vendas.cod_vendedor 
+GROUP By vendedores.nome
+
+4)
+SELECT vendedores.nome, sum(produtos.valor_comissao)as Valor_vendida 
+FROM produtos,vendas,vendedores 
+WHERE produtos.codigo=vendas.cod_produto AND vendedores.codigo=vendas.cod_vendedor AND vendas.data<="2013-06-31"AND  vendas.data>="2013-06-01" 
+GROUP By vendedores.nome
+
+5)
+SELECT  sum(produtos.valor)as Valor_vendida 
+FROM produtos,vendas,vendedores
+WHERE produtos.codigo=vendas.cod_produto AND vendedores.codigo=vendas.cod_vendedor AND vendedores.nome="Luciano Hulk" AND vendas.data<="2013-01-31"AND  vendas.data>="2013-01-01"
+
+6)
+SELECT produtos.fabricante , sum(produto.valor)as Total
+FROM produtos,vendas,vendedores 
+WHERE produtos.codigo=vendas.cod_produto AND vendedores.codigo=vendas.cod_vendedor AND vendas.data<="2013-05-31"AND  vendas.data>="2013-05-01" AND (vendedores.regiao="nordeste"or vendedores.regiao=norte)
+GRUP By produtos.fabricante

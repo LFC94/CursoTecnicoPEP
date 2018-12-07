@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>Formulario 1</title>
+</head>
+<body>
+<center>
+	<h1><b>Escola Virtual</b></h1>
+	<h2>Formulario de Pré-Matricula</h2>
+	<hr align="center" size="2" color="#000000"> 
+	<form name="matricula">
+		<table width="625" border="1" align="center" name="Matricula">
+			<tr>
+				<td><h3>Dados Pessoais: </h3>
+					<center>
+						<table name="dados">
+							<tr>
+								<td align="right"> Nome do aluno:</td>
+								<td><input name="nome_aluno" type="text" size="30" maxlength="200"></td>
+							</tr>
+							<tr>
+								<td align="right"> Nascimento(dd/mm/aaaa):</td>
+								<td><input name="nasc_dia" type="text" size="1" maxlength="2" >
+									/
+									<input name="nasc_mes" type="text" size="1" maxlength="2" >
+									/
+									<input name="nasc_ano" type="text" size="3" maxlength="4"></td>
+							</tr>
+							<tr>
+								<td align="right">Nome da Mãe:</td>
+								<td><input name="nome_mae" type="text" size="30" width="200"></td>
+							</tr>
+							<tr>
+								<td align="right"> Nome do Pai:</td>
+								<td><input name="nome_pai" type="text" size="30" width="200"></td>
+							</tr>
+							<tr>
+								<td align="right"> Telefone:</td>
+								<td>DDD(
+									<input name="tele_ddd" type="text" size="1" maxlength="3">
+									) Tel:
+									<input name="tele_num" type="text" size="8" maxlength="9">
+									Ramal:
+									<input name="tele_rama" type="text" size="3"></td>
+							</tr>
+							<tr>
+								<td align="right">E-mail:</td>
+								<td><input name="email" type="text" size="30" width="200"></td>
+							</tr>
+						</table>
+					</center></td>
+			</tr>
+			<tr>
+				<td><h3>Informações de Matricula:</h3>
+					<center>
+						<table name="informacoes" width="500">
+							<tr>
+								<td >Serie:</td>
+								<td >Turno:</td>
+								<td >Atividades Extracurriculares</td>
+							</tr>
+							<tr>
+								<td valign="top"><select name="Serie">
+										<option name="preescolar">Pre Escolar</option>
+										<option name="fundamental">Ensino Fundamental</option>
+									    <option name="preescolar">Ensino Medio</option>
+									</select></td>
+								<td valign="top"><input type="radio" name="turno">
+									Manhã<br>
+									<input type="radio" name="turno">
+									Tarde</td>
+								<td><input type="checkbox" name="info">
+									Informatica<br>
+									<input type="checkbox" name="musica">
+									Musica<br>
+									<input type="checkbox" name="bale">
+									Bale<br>
+									<input type="checkbox" name="pintura">
+									Pintura<br>
+									<input type="checkbox" name="judo">
+									Judô<br>
+									<input type="checkbox" name="futebol">
+									Futebol</td>
+							</tr>
+						</table>
+					</center></td>
+			</tr>
+		</table>
+		<br>
+		<input type="submit" name="enviar" value="Enviar Formulario">
+		<input type="reset" name="limpar" value="Limpar Campos">
+	</form>
+</center>
+</body>
+</html>

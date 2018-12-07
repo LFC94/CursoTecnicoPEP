@@ -1,0 +1,27 @@
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        // Criar consulta
+        alunosQuery = colegioPUEntityManager.createQuery("select a from Alunos a");
+        alunosList = alunosQuery.getResultList();   
+        try {            
+            // Informar o caminho do relatório
+            JasperReport report = (JasperReport) JRLoader.loadObject
+            ("relatorios/RelatorioAlunos2.jasper");            
+            // Informar lista que será impressa no relatório
+            JasperPrint print = JasperFillManager.fillReport(
+            report, null, new JRBeanCollectionDataSource(alunosList));
+            // Visualizar e imprimir relatório
+            // Parâmetro false, para quando fechar o relatório não fechar formulário
+            //JasperViewer.viewReport(print, false);                           
+            JasperViewer visualiza = null;
+            visualiza = new JasperViewer(print, false);
+            // Título do visualizador de relatório
+            visualiza.setTitle("Relatório de Alunos");
+            // Maximizar visualizador de relatório
+            visualiza.setExtendedState(visualiza.MAXIMIZED_BOTH);
+            // Ativar relatório
+            visualiza.setVisible(true);
+            
+        } catch (JRException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        } 
+    }    

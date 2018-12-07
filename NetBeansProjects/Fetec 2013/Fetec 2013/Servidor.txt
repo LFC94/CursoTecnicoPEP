@@ -1,0 +1,4 @@
+IP  174.120.172.162
+bd  acsiv_gsh
+usr acsiv_gsh
+snh  Asd123
